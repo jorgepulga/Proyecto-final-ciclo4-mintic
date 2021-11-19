@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TEATROS</title>
+    </head>
+    <body>
+        <h1 style= "font-size:48px"><u>Teatros:</u></h1>
+        <br>
+        <br>
+        <h1> Teatros con formato {{formato}}:</h1>
+        {%for teatro in output%}
+            <h2>Teatro:{{teatro[1]}}</h2><br>
+            <h3>Ciudad: <p>{{teatro[2]}}</p></h3><br>
+        {%endfor%}
+    </body>
+
+</html>

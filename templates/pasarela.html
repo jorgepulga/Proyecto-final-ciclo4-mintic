@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pagos</title>
+    </head>
+    <body>
+        <h1>PASARELA DE PAGO</h1>
+        <br>
+        <h2> Pague aquí su reserva para {{titulo}}</h2>
+        {{message}} 
+        {{seats}}
+        <form action="/payments/{{cod_reserva}}/{{titulo}}/" method='POST'>
+            {{csrf_token}}
+            <div>
+                <label for="pelicula">Película: {{titulo}}</label>
+            </div>
+            <div>
+                <label for ="numAsientos">Numero de Asientos:</label>
+                <input type="text" name="numAsientos" id= "numAsientos">
+            </div>
+            <div>
+                <label >Medio de Pago: </label>
+            </div>
+            <div>
+                <input type="radio" id="medioPago1"
+                name="medioPago" value="Credito">
+                <label for="medioPago1">Tarjeta de Credito</label>
+                
+                <input type="radio" id="medioPago2"
+                name="medioPago" value="Debito">
+                <label for="medioPago2">Tarjeta Debito</label>
+                
+                <input type="radio" id="medioPago3"
+                name="medioPago" value="Baloto">
+                <label for="medioPago3">Baloto</label>
+            </div>
+            <input type="submit" name="" value ="comprar">
+        </form>
+        {{mensaje2}}
+    </body>
+
+</html>

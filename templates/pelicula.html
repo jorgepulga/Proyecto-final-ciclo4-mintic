@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{pelicula}}</title>
+    </head>
+    <body>
+        <h1>Cinemark Peliculas</h1>
+        <br>
+        <h2>Búsqueda: {{pelicula}}</h2>
+        <p>{{mensaje}}</p>
+        {% for key, titulo in dict_peliculas.items() %}
+            {% if pelicula== key %}
+                <h4>Duracion: {{titulo.Duracion}}</h4>
+                <p>{{titulo.Sinopsis}}</p>
+            {% endif %}
+        {% endfor %}
+        {%if reserva%}
+            <button><a href="/reservas/{{pelicula}}/">Realizar Reserva</a></button>
+        {%else%}
+            <br>
+            <button><a href="/">Volver a inicio</a></button>
+            <button><a href="/profile/">Volver al perfil</a></button>
+            <button><a href="/cartelera/">Ir a la Cartelera</a></button>
+        {%endif%}
+    </body>
+</html>

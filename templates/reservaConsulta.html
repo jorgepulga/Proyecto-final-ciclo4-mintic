@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RESERVAS</title>
+    </head>
+    <body style="background-color:rgb(197, 192, 185)">
+        <h1 style="color:darkred; font-size:48px"><u>{{message}}</u> </h1> 
+        <hr/><hr/>
+        <h1> <i> Las reservas hechas por el usuario son las siguientes:</i></h1><hr/><hr/>
+        
+        {%for dict in userReservas %}
+            {%for key, value in dict.items()%}
+            <h2> {{key}}:</h2>
+            <h3>{{value}}</h3>
+            {%endfor%}
+            <hr/><hr/>
+        {%endfor%}
+        <br><br>
+        <button><a href="/cartelera/">Ir a la Cartelera</a></button>
+        <button><a href="/reservas/consulta/">Ir a mis reservas</a></button>
+        <button><a href="/">Volver a inicio</a></button>
+        <button><a href="/profile/">Volver al perfil</a></button>
+        
+    </body>
+
+</html>
